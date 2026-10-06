@@ -7,34 +7,76 @@ const D=[
 {id:'physics',s:'الفيزياء',t:'أخطاء القياس',i:'⚖️',d:'الدقة والضبط والأخطاء العشوائية والمنتظمة.',intro:'لا يوجد قياس خالٍ تمامًا من الخطأ.',o:['التمييز بين العشوائي والمنتظم.','تحديد مصادر الخطأ.','التمييز بين الدقة والضبط.'],e:[['العشوائي','متذبذب وقد يكون بالزيادة أو النقصان، ويقل بالتكرار والمتوسط.'],['المنتظم','في اتجاه واحد غالبًا بسبب المعايرة أو الخطأ الصفري.'],['الدقة والضبط','الدقة قرب الحقيقة، والضبط تقارب القياسات.']],sum:'العشوائي متذبذب، والمنتظم ثابت الاتجاه. الدقة قرب الحقيقة والضبط تقارب النتائج.',q:[['الخطأ في اتجاه واحد يسمى:', ['العشوائي','المنتظم','الضبط','الدقة'],1],['من مصادر الخطأ المنتظم:', ['الخطأ الصفري','تيارات الهواء','اختلاف النظر','الاهتزاز'],0],['تقليل العشوائي يكون بـ:', ['تغيير الأداة','التكرار والمتوسط','المعايرة','قيم كبيرة'],1],['القرب من القيمة الحقيقية يسمى:', ['الضبط','الدقة','الخطأ المئوي','المتوسط'],1]]},
 {id:'english',s:'اللغة الإنجليزية',t:'Vocabulary & Grammar (Module 1)',i:'🔠',d:'Past Simple وPast Continuous مع when وwhile.',intro:'Learn the difference between Past Simple and Past Continuous.',o:['Use vocabulary correctly.','Differentiate between the two tenses.','Use when and while.'],e:[['Past Simple','Completed actions in the past: Subject + V2.'],['Past Continuous','Actions in progress: was/were + V-ing.'],['When / While','While غالبًا مع المستمر، وWhen مع الحدث القصير.']],sum:'Past Simple للأحداث المنتهية، وPast Continuous للأحداث المستمرة.',q:[['I ___ to the radio when I heard the news.',['listened','was listening','am listening','listen'],1],['They ___ football yesterday at 5 PM.',['were playing','played','are playing','play'],0],['While she ___ a book, the lights went out.',['read','is reading','was reading','reads'],2],['What ___ you doing when the earthquake happened?',['are','did','was','were'],3]]}
 ];
+
+
+// إضافات البوابة: ملخص منظم + أسئلة الدرس وحلول مبسطة (إعادة صياغة تعليمية)
+const lessonExtras={
+  math:{summary:'الاقتران التربيعي الأساسي هو f(x)=x². عند إضافة عدد خارج القوس يحدث انتقال رأسي، وعند تغيير x داخل القوس يحدث انتقال أفقي. في g(x)=(x-h)²+k يكون رأس القطع المكافئ (h,k)، وتساعد الإشارة على تحديد اتجاه الانتقال.',questions:[
+    ['ما أثر +k في g(x)=x²+k؟','ينقل المنحنى رأسيًا بمقدار k: للأعلى إذا كان موجبًا وللأسفل إذا كان سالبًا.'],
+    ['ما أثر (x-h)²؟','ينقل المنحنى أفقيًا: إلى اليمين إذا كان h موجبًا، وإلى اليسار إذا كان h سالبًا.'],
+    ['حددي رأس المنحنى y=(x-2)²+3.','الرأس هو (2,3).'],
+    ['حددي اتجاه انتقال y=(x+4)²-1.','إلى اليسار 4 وحدات وإلى الأسفل وحدة واحدة.'],
+    ['ما الاقتران الأساسي للقطع المكافئ؟','f(x)=x².']
+  ]},
+  arabic:{summary:'الاسم المقصور ينتهي بألف لازمة مثل فتى. والاسم المنقوص ينتهي بياء لازمة مكسور ما قبلها مثل القاضي، وتحذف ياؤه في حالتي الرفع والجر إذا كان نكرة غير مضاف. والاسم الممدود ينتهي بهمزة قبلها ألف زائدة مثل صحراء وسماء.',questions:[
+    ['ما المقصود بالاسم المقصور؟','اسم معرب آخره ألف لازمة، مثل فتى وعصا.'],
+    ['ما المقصود بالاسم المنقوص؟','اسم معرب آخره ياء لازمة مكسور ما قبلها، مثل القاضي.'],
+    ['ما المقصود بالاسم الممدود؟','اسم معرب آخره همزة قبلها ألف زائدة، مثل صحراء.'],
+    ['متى تحذف ياء الاسم المنقوص؟','تحذف في حالتي الرفع والجر إذا كان نكرة غير مضاف.'],
+    ['صنفي الكلمات: هدى، القاضي، بناء.','هدى مقصور، القاضي منقوص، بناء ممدود.']
+  ]},
+  biology:{summary:'الخلية هي وحدة البناء والوظيفة في الكائنات الحية. تضم الخلايا حقيقية النواة عضيات متخصصة؛ فالغشاء البلازمي ينظم دخول المواد وخروجها، والنواة تحتوي المادة الوراثية وتنظم نشاط الخلية، والرايبوسومات تصنع البروتين، والميتوكندريا تنتج الطاقة، وجهاز غولجي يعدل المواد ويغلفها. ومن عمليات النقل الانتشار والأسموزية والنقل النشط والإدخال والإخراج الخلوي.',questions:[
+    ['ما الفكرة الرئيسة لنظرية الخلية؟','الكائنات الحية تتكون من خلية أو أكثر، والخلية وحدة البناء والوظيفة، وتنتج الخلايا من خلايا سابقة.'],
+    ['ما وظيفة الغشاء البلازمي؟','يفصل مكونات الخلية عن الوسط وينظم حركة المواد من الخلية وإليها.'],
+    ['ما وظيفة النواة؟','تحتوي المادة الوراثية وتساعد على تنظيم عمل الخلية.'],
+    ['ما وظيفة الميتوكندريا؟','إنتاج الطاقة اللازمة للعمليات الحيوية في الخلية.'],
+    ['ما الفرق الأساسي بين النقل النشط والانتشار؟','النقل النشط يحتاج طاقة وينقل المواد عكس تدرج التركيز، أما الانتشار فيحدث دون استهلاك طاقة مع تدرج التركيز.'],
+    ['ما أنواع البلاستيدات؟','خضراء وملونة وعديمة اللون.']
+  ]},
+  earth:{summary:'الجريان السطحي هو جزء من مياه الهطل يجري فوق سطح الأرض. يتأثر مقدار الجريان بالهطل والانحدار ونوع التربة والصخور والغطاء النباتي. يزداد الجريان عادةً مع زيادة الانحدار وغزارة الهطل ووجود الأسطح قليلة النفاذية، بينما يساعد الغطاء النباتي والتربة النفوذة على زيادة التسرب وتقليل الجريان.',questions:[
+    ['ما المقصود بالجريان السطحي؟','هو جريان جزء من مياه الهطل فوق سطح الأرض عندما لا تتسرب إلى التربة أو تتبخر.'],
+    ['اذكري عاملين يزيدان الجريان السطحي.','غزارة الهطل وزيادة انحدار السطح، ومن العوامل أيضًا قلة نفاذية التربة والصخور.'],
+    ['كيف يؤثر الغطاء النباتي في الجريان؟','يقلل الجريان ويساعد على تسرب الماء إلى التربة.'],
+    ['ما الحوض المائي؟','منطقة تتجمع مياهها وتتجه نحو مجرى مائي واحد أو نظام تصريف مشترك.'],
+    ['لماذا تزيد الصخور قليلة النفاذية الجريان؟','لأنها تحد من تسرب الماء إلى باطن الأرض.']
+  ]},
+  chemistry:{summary:'الحموض والقواعد مواد تختلف في خواصها الكيميائية. ترتبط الحموض بزيادة أيونات الهيدروجين H+ وتكون قيمة pH لها أقل من 7، بينما ترتبط القواعد بأيونات OH- وتكون قيمة pH لها أكبر من 7. أما المحلول المتعادل فقيمة pH له تساوي 7. تستخدم الكواشف مثل تباع الشمس للتمييز بينهما.',questions:[
+    ['ما قيمة pH للمحلول المتعادل؟','7.'],
+    ['ماذا يدل pH أقل من 7؟','يدل على أن المحلول حمضي.'],
+    ['ماذا يدل pH أكبر من 7؟','يدل على أن المحلول قاعدي.'],
+    ['ما الأيون المرتبط بالخواص الحمضية؟','أيون الهيدروجين H+.'],
+    ['ما الأيون المرتبط بالخواص القاعدية؟','أيون الهيدروكسيد OH-.'],
+    ['كيف يتغير تباع الشمس عند وجود قاعدة؟','يتحول تباع الشمس الأحمر إلى الأزرق.']
+  ]},
+  physics:{summary:'القياس نتيجة مقارنة كمية مجهولة بوحدة معيارية. قد تظهر أخطاء في القياس؛ فالخطأ العشوائي يتغير من قياس لآخر ويمكن تقليله بتكرار القياسات وحساب المتوسط، بينما الخطأ المنتظم يميل إلى الاتجاه نفسه وقد ينتج عن المعايرة أو الخطأ الصفري. الدقة تعبر عن قرب القياس من القيمة الحقيقية، والضبط يعبر عن تقارب القياسات من بعضها.',questions:[
+    ['ما الخطأ العشوائي؟','خطأ يتغير من قياس لآخر وقد يكون بالزيادة أو النقصان.'],
+    ['كيف نقلل أثر الخطأ العشوائي؟','بتكرار القياس أكثر من مرة واستخدام المتوسط.'],
+    ['ما الخطأ المنتظم؟','خطأ يميل إلى الظهور باتجاه ثابت أو مقدار ثابت نسبيًا.'],
+    ['اذكري مثالًا على خطأ منتظم.','عدم تصفير أداة القياس أو وجود خطأ في معايرتها.'],
+    ['ما الفرق بين الدقة والضبط؟','الدقة قرب القياس من القيمة الحقيقية، والضبط تقارب القياسات من بعضها.']
+  ]},
+  english:{summary:'Past Simple is used for completed actions in the past, while Past Continuous describes an action that was in progress at a particular time. We often use when with the shorter interrupting action and while with an action in progress.',questions:[
+    ['When do we use Past Simple?','For completed actions or events in the past.'],
+    ['How do we form Past Continuous?','was/were + verb-ing.'],
+    ['Which tense usually describes the longer action after while?','Past Continuous.'],
+    ['Complete: I ___ TV when the phone rang.','was watching.'],
+    ['Complete: They ___ football yesterday.','played.']
+  ]}
+};
+D.forEach(x=>{if(lessonExtras[x.id]){x.lessonSummary=lessonExtras[x.id].summary;x.lessonQuestions=lessonExtras[x.id].questions;}});
+
 let done=new Set(JSON.parse(localStorage.getItem('g9done')||'[]')),quiz=null,qi=0,score=0;
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function show(id){$$('.view').forEach(x=>x.classList.remove('active'));$('#'+id).classList.add('active');$$('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));scrollTo(0,0)}
 function progress(){let p=Math.round(done.size/D.length*100);$('#progressText').textContent=p+'%';$('#progressBar').style.width=p+'%'}
 function subjects(){ $('#subjects').innerHTML=D.map(x=>`<div class="subject" onclick="openLesson('${x.id}')"><div class="icon">${x.i}</div><h3>${x.s}</h3><p>${x.t}</p><span class="tag">${done.has(x.id)?'✓ مكتمل':'ابدئي الدرس'}</span></div>`).join('') }
 function lessons(){let f=$('#filter').value,list=f==='all'?D:D.filter(x=>x.id===f);$('#lessonGrid').innerHTML=list.map(x=>`<div class="lesson-card"><div class="icon">${x.i}</div><small>${x.s}</small><h3>${x.t}</h3><p>${x.d}</p><button class="primary" onclick="openLesson('${x.id}')">فتح الدرس</button> <button onclick="startQuiz('${x.id}')">اختبار</button></div>`).join('')}
-function activityFor(x){
-  if(x.id==='math') return `<p>اختاري التحويل الصحيح للدالة.</p><div class="activity"><button onclick="mathInfo(0)">g(x)=x²+5</button><button onclick="mathInfo(1)">g(x)=(x-3)²</button><button onclick="mathInfo(2)">g(x)=(x+2)²-4</button></div><p id="math" class="panel"></p>`;
-  if(x.id==='arabic') return `<p>اختاري نوع الاسم الصحيح.</p><div class="activity"><button onclick="arabicInfo('مصطفى')">مصطفى</button><button onclick="arabicInfo('صحراء')">صحراء</button><button onclick="arabicInfo('القاضي')">القاضي</button><button onclick="arabicInfo('عصا')">عصا</button></div><p id="arabic" class="panel"></p>`;
-  if(x.id==='biology') return `<p>اختاري العضية لمعرفة وظيفتها.</p><div class="activity">${['النواة','الميتوكندريا','الريبوسومات','أجسام غولجي'].map(a=>`<button onclick="this.parentElement.nextElementSibling.textContent='${a}: '+bioInfo('${a}')">${a}</button>`).join('')}</div><p id="bio" class="panel"></p>`;
-  if(x.id==='earth') return `<p>اختاري العامل لمعرفة تأثيره في الجريان السطحي.</p><select class="select" onchange="earthInfo(this.value)"><option value="">اختاري العامل</option><option value="s">انحدار شديد</option><option value="t">أشجار كثيفة</option><option value="r">صخور كتيمة</option><option value="a">تربة رملية</option></select><p id="earth" class="panel"></p>`;
-  if(x.id==='chemistry') return `<p>حرّكي المؤشر لمعرفة طبيعة المحلول.</p><input id="ph" type="range" min="0" max="14" value="7" style="width:90%"><h3>pH = <span id="phv">7</span></h3><div id="phr" class="panel">متعادل</div>`;
-  if(x.id==='physics') return `<p>هل الخطأ التالي عشوائي أم منتظم؟</p><p>عدم تصفير الميزان قبل القياس.</p><div class="activity"><button onclick="phys('منتظم')">منتظم</button><button onclick="phys('عشوائي')">عشوائي</button></div><p id="phys" class="panel"></p>`;
-  if(x.id==='english') return `<p>اختاري الإجابة الصحيحة لإكمال الجملة.</p><div class="panel"><b>I ___ to the radio when I heard the news.</b><div class="activity"><button onclick="englishInfo(this, false)">listened</button><button onclick="englishInfo(this, true)">was listening</button></div></div><div class="panel"><b>While she ___ a book, the lights went out.</b><div class="activity"><button onclick="englishInfo(this, false)">read</button><button onclick="englishInfo(this, true)">was reading</button></div></div><p id="english" class="panel"></p>`;
-  return '';
-}
-function openLesson(id){let x=D.find(a=>a.id===id);$('#detail').innerHTML=`<div class="detail-head"><div style="font-size:3rem">${x.i}</div><small style="color:#eee">${x.s}</small><h2>${x.t}</h2><p>${x.intro}</p></div><div class="panel"><h3>🎯 أهداف التعلم</h3><ul>${x.o.map(a=>`<li>${a}</li>`).join('')}</ul></div>${x.e.map(a=>`<div class="panel"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('')}<div class="interactive"><h3>✨ نشاط سريع</h3>${activityFor(x)}</div><div class="panel"><h3>📌 الخلاصة</h3><p>${x.sum}</p></div><div style="text-align:center"><button class="primary" onclick="complete('${x.id}')">${done.has(x.id)?'✓ مكتمل':'وضع علامة كمكتمل'}</button> <button onclick="startQuiz('${x.id}')">ابدئي الاختبار</button></div>`;show('lesson')}
+function openLesson(id){let x=D.find(a=>a.id===id);$('#detail').innerHTML=`<div class="detail-head"><div style="font-size:3rem">${x.i}</div><small style="color:#eee">${x.s}</small><h2>${x.t}</h2><p>${x.intro}</p></div><div class="panel"><h3>📚 ملخص الدرس</h3><p>${x.lessonSummary||x.sum}</p></div><div class="panel"><h3>🎯 أهداف التعلم</h3><ul>${x.o.map(a=>`<li>${a}</li>`).join('')}</ul></div>${x.e.map(a=>`<div class="panel"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('')}<div class="interactive"><h3>✨ نشاط سريع</h3><p>اختاري الإجابة أو حرّكي المؤشر حسب المادة.</p>${x.id==='chemistry'?`<input id="ph" type="range" min="0" max="14" value="7" style="width:90%"><h3>pH = <span id="phv">7</span></h3><div id="phr" class="panel">متعادل</div>`:x.id==='biology'?`<div class="activity">${['النواة','الميتوكندريا','الريبوسومات','أجسام غولجي'].map(a=>`<button onclick="this.parentElement.nextElementSibling.textContent='${a}: '+bioInfo('${a}')">${a}</button>`).join('')}</div><p id="bio" class="panel">اختاري عضية لمعرفة وظيفتها.</p>`:x.id==='earth'?`<select class="select" onchange="earthInfo(this.value)"><option value="">اختاري العامل</option><option value="s">انحدار شديد</option><option value="t">أشجار كثيفة</option><option value="r">صخور كتيمة</option><option value="a">تربة رملية</option></select><p id="earth"></p>`:x.id==='physics'?`<p>عدم تصفير الميزان قبل القياس:</p><div class="activity"><button onclick="phys('منتظم')">منتظم</button><button onclick="phys('عشوائي')">عشوائي</button></div><p id="phys"></p>`:`<p>راجعي الملخص ثم جرّبي الإجابة عن أسئلة الدرس.</p>`}</div><div class="panel"><h3>📝 أسئلة الدرس وحلولها</h3>${(x.lessonQuestions||[]).map((q,i)=>`<div class="lesson-q"><p><b>${i+1}) ${q[0]}</b></p><button onclick="toggleAnswer(this)">عرض الحل</button><p class="answer" hidden>✅ ${q[1]}</p></div>`).join('')}</div><div class="panel"><h3>📌 الخلاصة السريعة</h3><p>${x.sum}</p></div><div style="text-align:center"><button class="primary" onclick="complete('${x.id}')">${done.has(x.id)?'✓ مكتمل':'وضع علامة كمكتمل'}</button> <button onclick="startQuiz('${x.id}')">ابدئي الاختبار</button></div>`;show('lesson')}
+function toggleAnswer(btn){const a=btn.nextElementSibling;a.hidden=!a.hidden;btn.textContent=a.hidden?'عرض الحل':'إخفاء الحل'}
 function complete(id){done.add(id);localStorage.setItem('g9done',JSON.stringify([...done]));progress();subjects();lessons();openLesson(id)}
 function bioInfo(a){return {النواة:'مركز التحكم وتحوي DNA',الميتوكندريا:'إنتاج الطاقة',الريبوسومات:'بناء البروتينات','أجسام غولجي':'تغليف وإفراز المواد'}[a]}
 function earthInfo(v){$('#earth').textContent={s:'يزداد الجريان السطحي.',t:'يقل الجريان ويزداد التسرب.',r:'يزداد الجريان لعدم النفاذ.',a:'يقل الجريان ويزداد التسرب.'}[v]||''}
 function phys(v){$('#phys').textContent=v==='منتظم'?'إجابة صحيحة ✅':'إجابة غير صحيحة ❌'}
-function mathInfo(n){$('#math').textContent=[
-  'إضافة 5 تنقل القطع المكافئ إلى الأعلى 5 وحدات.',
-  'طرح 3 من x ينقل القطع المكافئ إلى اليمين 3 وحدات.',
-  'الإشارة الموجبة داخل القوس تنقله إلى اليسار 2، و-4 تنقله إلى الأسفل 4.'
-][n]}
-function arabicInfo(a){$('#arabic').textContent={مصطفى:'مقصور: ينتهي بألف لازمة.',صحراء:'ممدود: ينتهي بهمزة قبلها ألف زائدة.',القاضي:'منقوص: ينتهي بياء لازمة مكسور ما قبلها.',عصا:'مقصور: ينتهي بألف لازمة.'}[a]||''}
-function englishInfo(btn,correct){btn.parentElement.querySelectorAll('button').forEach(b=>b.disabled=true);$('#english').textContent=correct?'إجابة صحيحة ✅':'إجابة غير صحيحة ❌'}
 function startQuiz(id){quiz=D.find(x=>x.id===id);qi=0;score=0;show('quiz');pick();question()}
 function pick(){$('#quizPicker').innerHTML=D.map(x=>`<button onclick="startQuiz('${x.id}')">${x.i} ${x.s}</button>`).join('')}
 function question(){if(!quiz)return;if(qi>=quiz.q.length){$('#quizArea').innerHTML=`<div class="quizbox" style="text-align:center"><h2>🎉 انتهى الاختبار</h2><p>نتيجتك في ${quiz.s}: <b>${score}/${quiz.q.length}</b></p><button class="primary" onclick="startQuiz('${quiz.id}')">إعادة الاختبار</button></div>`;return}let q=quiz.q[qi];$('#quizArea').innerHTML=`<div class="quizbox"><small>السؤال ${qi+1} من ${quiz.q.length}</small><h3>${q[0]}</h3>${q[1].map((o,i)=>`<button class="option" onclick="answer(${i},${q[2]})">${o}</button>`).join('')}<p id="msg"></p><button id="next" class="primary" disabled onclick="qi++;question()">التالي</button></div>`}
